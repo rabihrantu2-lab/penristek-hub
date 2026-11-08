@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import { BrandLogos } from "./BrandLogos";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const navigation = [
-  { label: "Profil", href: "/#profil" },
+  { label: "Profil", href: "/tentang" },
   { label: "Program", href: "/program" },
   { label: "Pengurus", href: "/pengurus" },
   { label: "Transparansi Kas", href: "/transparansi" },
@@ -57,21 +57,13 @@ export function Navbar() {
   }
 
   const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-400";
-  const cta = `inline-flex min-h-11 items-center justify-center rounded-xl bg-accent-400 px-4 text-sm font-semibold text-brand-950 hover:bg-accent-300 motion-safe:transition-colors ${focus}`;
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 border-b border-white/10 bg-brand-900/95 text-white backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" onClick={() => setOpen(false)} aria-label="PENRISTEK UT Bogor — Beranda" className={`flex min-w-0 items-center gap-3 rounded-lg ${focus}`}>
-          <span className="flex shrink-0 items-center gap-2" aria-hidden="true">
-            <span className="grid size-11 place-items-center rounded-xl bg-white p-1">
-              <Image src="/brand/logo-penristek.png" alt="" width={40} height={40} className="size-full object-contain" />
-            </span>
-            <span className="grid size-9 place-items-center rounded-lg bg-white p-1">
-              <Image src="/brand/logo-ut.png" alt="" width={32} height={32} className="size-full object-contain" />
-            </span>
-          </span>
-          <span className="min-w-0 leading-tight">
+          <BrandLogos size="nav" decorative />
+          <span className="hidden min-w-0 leading-tight min-[480px]:block">
             <span className="block font-display text-sm font-bold tracking-tight sm:text-base">PENRISTEK</span>
             <span className="mt-1 block text-xs font-medium text-emerald-100">UT Bogor</span>
           </span>
@@ -83,7 +75,6 @@ export function Navbar() {
               {label}
             </Link>
           ))}
-          <Link href="/transparansi" className={`ml-3 ${cta}`}>Transparansi</Link>
         </nav>
 
         <button ref={toggleRef} type="button" aria-label={open ? "Tutup menu navigasi" : "Buka menu navigasi"} aria-expanded={open} aria-controls="public-mobile-navigation" onClick={() => setOpen(!open)} className={`grid size-11 shrink-0 place-items-center rounded-xl border border-white/20 hover:bg-white/10 xl:hidden ${focus}`}>
@@ -98,7 +89,6 @@ export function Navbar() {
               {label}
             </Link>
           ))}
-          <Link href="/transparansi" onClick={() => setOpen(false)} className={`mt-3 ${cta}`}>Transparansi</Link>
         </div>
       </nav>
     </header>
