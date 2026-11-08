@@ -25,12 +25,12 @@ export default function TentangPage() {
   return (
     <>
       <section className="bg-brand-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
           <p className="text-sm font-semibold text-accent-300">Tentang Kami</p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
             UKM PENRISTEK UT Bogor
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-emerald-100">
+          <p className="mt-3 max-w-2xl text-base leading-7 text-emerald-100">
             Ruang bertumbuh, berkolaborasi, dan berkarya dalam pendidikan, riset, dan teknologi.
             Kabinet Ganesha Aksara.
           </p>

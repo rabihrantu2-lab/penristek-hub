@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "PENRISTEK Hub | UKM UT Bogor",
   description:
     "Profil, program, pengurus, dan transparansi kas UKM PENRISTEK UT Bogor — Kabinet Ganesha Aksara.",
+  icons: {
+    icon: "/brand/logo-penristek.png",
+  },
 };
 
 export default function RootLayout({

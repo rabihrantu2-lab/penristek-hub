@@ -1,5 +1,4 @@
 import { BrandLogos } from "./BrandLogos";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
@@ -52,9 +51,6 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs leading-6 text-emerald-100 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} UKM PENRISTEK UT Bogor. Hak cipta dilindungi.</p>
-          <Link href="/transparansi" className="inline-flex min-h-11 items-center gap-2 self-start rounded-lg hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-400">
-            Transparansi Kas <ArrowUpRight size={15} aria-hidden="true" />
-          </Link>
         </div>
       </div>
     </footer>

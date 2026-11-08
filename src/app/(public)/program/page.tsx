@@ -14,56 +14,52 @@ const agenda: Agenda[] = [
     judul: "Acara KWU/LMND di Perpusnas",
     keterangan: "Siang: acara di Perpusnas. Sore: free.",
   },
-  {
-    tanggal: "15 Nov",
-    judul: "Rapat / Pematangan Acara",
-    status: "Segera ditentukan",
-  },
+  { tanggal: "15 Nov", judul: "Rapat / Pematangan Acara", status: "Segera ditentukan" },
   { tanggal: "22 Nov", judul: "Proker" },
   { tanggal: "29 Nov", judul: "UAS & Agenda Free" },
 ];
 
 export default function ProgramPage() {
   return (
-    <>
-      <section className="bg-brand-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <p className="text-sm font-semibold text-accent-300">Program Kerja</p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Jadwal November
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-emerald-100">
-            Agenda kegiatan UKM PENRISTEK UT Bogor per minggu. Jadwal dapat berubah sewaktu-waktu.
-          </p>
-        </div>
-      </section>
+    <div className="mx-auto max-w-3xl px-4 pb-20 pt-16 sm:px-6">
+      <header className="pb-8">
+        <p className="text-sm font-semibold text-green-700">Program Kerja</p>
+        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Jadwal November</h1>
+        <p className="mt-3 max-w-xl text-base leading-relaxed text-gray-600">
+          Agenda kegiatan UKM PENRISTEK UT Bogor per minggu. Jadwal dapat berubah sewaktu-waktu.
+        </p>
+      </header>
 
-      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
-        <ol className="relative space-y-8 border-l-2 border-brand-700/20 pl-8 sm:pl-10">
+      <div className="relative pl-12">
+        {/* Garis vertikal: pusatnya di x = 18px, sejajar dengan titik */}
+        <div aria-hidden="true" className="absolute bottom-0 left-4 top-0 border-l-4 border-green-200" />
+
+        <ol className="space-y-6">
           {agenda.map((a) => (
             <li key={a.tanggal} className="relative">
               <span
                 aria-hidden="true"
-                className="absolute -left-[2.6rem] top-5 size-4 rounded-full border-4 border-canvas bg-brand-700 ring-2 ring-brand-700/30 sm:-left-[3.1rem]"
+                className="absolute -left-[38px] top-7 size-4 rounded-full bg-green-600 ring-4 ring-green-100"
               />
-              <div className="rounded-2xl border border-line bg-surface p-5 shadow-soft sm:p-6">
+              <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-colors hover:border-green-300">
                 <div className="flex flex-wrap items-center gap-2">
-                  <time className="rounded-full bg-brand-900 px-3 py-1 text-xs font-bold text-white">
+                  <time className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-800">
                     {a.tanggal}
                   </time>
                   {a.status && (
-                    <span className="rounded-full bg-accent-100 px-2.5 py-0.5 text-xs font-semibold text-accent-800">
+                    <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
                       {a.status}
                     </span>
                   )}
                 </div>
-                <h2 className="mt-3 text-lg font-bold text-brand-900">{a.judul}</h2>
-                {a.keterangan && <p className="mt-1.5 text-sm leading-6 text-muted">{a.keterangan}</p>}
+                <h2 className="mt-3 text-lg font-bold text-gray-800">{a.judul}</h2>
+                {a.keterangan && <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{a.keterangan}</p>}
               </div>
             </li>
           ))}
         </ol>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
+
