@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = { title: "Transparansi Kas | PENRISTEK Hub" };
@@ -32,11 +33,31 @@ export default async function TransparansiPage() {
   return (
     <>
       <section className="bg-brand-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <p className="text-sm font-semibold text-accent-300">Transparansi</p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Laporan Kas</h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-emerald-100">
-            Catatan pemasukan dan pengeluaran kas UKM PENRISTEK UT Bogor yang dipublikasikan secara terbuka.
+        <div className="mx-auto flex max-w-3xl flex-col items-center px-4 py-14 text-center sm:px-6 lg:py-20">
+          <div className="flex items-center gap-5 rounded-2xl bg-white px-5 py-3 shadow-lg shadow-black/20 sm:gap-8 sm:px-8 sm:py-4">
+            <Image
+              src="/brand/logo-penristek.png"
+              alt="Logo UKM PENRISTEK UT Bogor"
+              width={640}
+              height={640}
+              priority
+              className="size-16 object-contain sm:size-20"
+            />
+            <span aria-hidden="true" className="h-12 w-px bg-brand-900/15 sm:h-14" />
+            <Image
+              src="/brand/logo-ormawa.png"
+              alt="Logo ORMAWA Universitas Terbuka Bogor"
+              width={1080}
+              height={1350}
+              priority
+              className="h-16 w-auto object-contain sm:h-20"
+            />
+          </div>
+          <h1 className="mt-8 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Transparansi Kas UKM PENRISTEK
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-7 text-emerald-100 sm:text-lg">
+            Laporan arus kas yang transparan dan akuntabel untuk seluruh anggota Kabinet Ganesha Aksara.
           </p>
         </div>
       </section>
